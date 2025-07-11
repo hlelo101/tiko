@@ -7,6 +7,11 @@ using Clock = std::chrono::steady_clock;
 void drawResults(std::vector<entry> entries, unsigned int selected) {
     GOTO(0, 4);
     std::println("\033[01;30;41mResults:\033[00m");
+    if(entries.empty()) {
+        std::print("\033[00;90mNo results.\033[00m");
+        std::cout.flush();
+        return;
+    }
 
     for(unsigned int i = 0; i < entries.size(); ++i) {
         if(selected != i) {
