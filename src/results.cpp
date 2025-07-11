@@ -175,9 +175,8 @@ void search(std::string q) {
                     ENABLE_CURSOR();
                     return;
                 case 'q':
-                    CLEAR();
-                    std::println("Bye!");
-                    exit(0);
+                    ENABLE_CURSOR();
+                    quit();
             }
         }
     }

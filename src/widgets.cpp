@@ -20,6 +20,13 @@ void initWidgets() {
     initTermios();
 }
 
+void quit() {
+    CLEAR();
+    resetTermios();
+    std::println("Bye!");
+    exit(0);
+}
+
 std::string readInput(const unsigned int len, unsigned int x, unsigned int y, const std::string placeholder, const unsigned int max) {
     std::string input;
     bool done = false;

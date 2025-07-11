@@ -53,7 +53,7 @@ unsigned int searchBar() {
 void showSearchUI() {
     // Get input
     while(1) {
-        // Print the terminal size logo
+        // Print some infos: terminal size, version
         CLEAR();
         std::println(
             "\033[01mTerminal size\033[00m\n - Width: {}\n - Height: {}\n\n"
@@ -69,11 +69,7 @@ void showSearchUI() {
         GOTO(startX + 1, tSizeH / 2 + 1);
         std::string query = readInput(searchSize - 2, startX + 1, tSizeH / 2 + 1, "Search here...");
 
-        if(query.compare("quit") == 0) {
-            CLEAR();
-            std::println("Bye!");
-            exit(0);
-        }
+        if(query.compare("quit") == 0) quit();
         if(!query.empty()) search(query);
     }
 }
